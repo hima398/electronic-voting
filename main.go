@@ -46,7 +46,7 @@ func Count(votes []big.Int, priv *paillier.PrivateKey) {
 	for _, v := range votes {
 		t = new(big.Int).Mod(new(big.Int).Mul(t, &v), n2)
 	}
-	result := priv.Decrypt(t, priv)
+	result := priv.Decrypt(t)
 
 	fmt.Println(result)
 }
